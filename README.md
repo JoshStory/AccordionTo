@@ -12,90 +12,90 @@ You can link to specific tabs in the URL by using the same conventions as jQuery
 Example Usage:
 =============================
 
-<pre><code><script src="/latest/version/of/jQuery.js"></script>
-  
-<script src="accordionTo.js"></script></code>
+	<script src="/latest/version/of/jQuery.js"></script>
+	  
+	<script src="accordionTo.js"></script></code>
 
-<script>
+	<script>
 	
-	$(document).ready(function(){
+		$(document).ready(function(){
 			
-		$('.tabContainer').accordionTo();
+			$('.tabContainer').accordionTo();
 			
-	});
+		});
 	
-</script></code></pre>
+	</script>
 
 =============================
 Options (showing defaults):
 =============================
 
-<pre><code><script>
+	<script>
   
-	$(document).ready(function(){
+		$(document).ready(function(){
 			
-	  $('.tabContainer').accordionTo({
+			$('.tabContainer').accordionTo({
 
-		controls : 'tabsNav', //class for separate list controls
-  	 	accordion : 'accordionNav', //class for main accordion list
-		breakpoint : 480, //breakpoint in pixels for transitions and resize check
-		accordionTrans : 'slide', //effect for accordion. also uses 'fade' and 'none'
-		tabTrans : 'none', //effect for tabs. lso uses 'fade' and 'slide'
-		resizeCheck : true //when window resizes above the breakpoint, check if there are no active tabs. if there aren't any, set the first tab active
+				controls : 'tabsNav', //class for separate list controls
+				accordion : 'accordionNav', //class for main accordion list
+				breakpoint : 480, //breakpoint in pixels for transitions and resize check
+				accordionTrans : 'slide', //effect for accordion. also uses 'fade' and 'none'
+				tabTrans : 'none', //effect for tabs. lso uses 'fade' and 'slide'
+				resizeCheck : true //when window resizes above the breakpoint, check if there are no active tabs. if there aren't any, set the first tab active
 
- 	});
+			});
 			
-  });
+		});
 	
-</script></code></pre>
+	</script>
 
 =============================
 Markup:
 =============================
 
-<pre><code><div class="tabContainer">
+	<div class="tabContainer">
 
-  <ul class="tabsNav">
+		<ul class="tabsNav">
 	
-	<li><a href="#one">One</a></li>
-	<li><a href="#two">Two</a></li>
-	<li><a href="#three">Three</a></li>
+			<li><a href="#one">One</a></li>
+			<li><a href="#two">Two</a></li>
+			<li><a href="#three">Three</a></li>
 		
-	</ul>
+		</ul>
 	
-	<ul class="accordionNav">
+		<ul class="accordionNav">
 		
-		<li><a href="#one">One</a>
+			<li><a href="#one">One</a>
 		  
-		  <div id="one" class="section">
-		    
-		    ...
-		
-		  </div>
+				<div id="one" class="section">
+		    	
+					...
+			
+				</div>
 		  
-	  </li>
-	  <li><a href="#two">Two</a>
+			</li>
+			<li><a href="#two">Two</a>
 		  
-		  <div id="two" class="section">
+				<div id="two" class="section">
+  	    	
+					...
+			
+				</div>
+		  
+			</li>
+			<li><a href="#three">Three</a>
+		  
+				<div id="three" class="section">
   	    
-		    ...
+					...
 		
-			 </div>
+				</div>
 		  
-		</li>
-		<li><a href="#three">Three</a>
-		  
-		  <div id="three" class="section">
-  	    
-		    ...
+			</li>
 		
-			 </div>
-		  
-		</li>
-		
-	</ul>
+		</ul>
 	
-</div></code></pre>
+	</div>
 
 
 
