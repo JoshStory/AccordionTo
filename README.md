@@ -8,6 +8,8 @@ Second list also works as anchor navigation fallback when no js is available.
 
 You can link to specific tabs in the URL by using the same conventions as jQuery UI tabs.
 
+Use CSS + media queries to toggle visibility for the tabs and anchor links.
+
 =============================
 Example Usage:
 =============================
