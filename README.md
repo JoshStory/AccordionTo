@@ -12,9 +12,9 @@ You can link to specific tabs in the URL by using the same conventions as jQuery
 Example Usage:
 =============================
 
-<script src="/latest/version/of/jQuery.js"></script>
+<pre><code><script src="/latest/version/of/jQuery.js"></script>
   
-<script src="accordionTo.js"></script>
+<script src="accordionTo.js"></script></code>
 
 <script>
 	
@@ -24,42 +24,42 @@ Example Usage:
 			
 	});
 	
-</script>
+</script></code></pre>
 
 =============================
 Options (showing defaults):
 =============================
 
-<script>
+<pre><code><script>
   
 	$(document).ready(function(){
 			
 	  $('.tabContainer').accordionTo({
 
-         	controls : 'tabsNav', //class for separate list controls
+		controls : 'tabsNav', //class for separate list controls
   	 	accordion : 'accordionNav', //class for main accordion list
 		breakpoint : 480, //breakpoint in pixels for transitions and resize check
 		accordionTrans : 'slide', //effect for accordion. also uses 'fade' and 'none'
 		tabTrans : 'none', //effect for tabs. lso uses 'fade' and 'slide'
 		resizeCheck : true //when window resizes above the breakpoint, check if there are no active tabs. if there aren't any, set the first tab active
 
-    });
+ 	});
 			
   });
 	
-</script>
+</script></code></pre>
 
 =============================
 Markup:
 =============================
 
-<div class="tabContainer">
+<pre><code><div class="tabContainer">
 
   <ul class="tabsNav">
 	
-	  <li><a href="#one">One</a></li>
-		<li><a href="#two">Two</a></li>
-		<li><a href="#three">Three</a></li>
+	<li><a href="#one">One</a></li>
+	<li><a href="#two">Two</a></li>
+	<li><a href="#three">Three</a></li>
 		
 	</ul>
 	
@@ -95,7 +95,7 @@ Markup:
 		
 	</ul>
 	
-</div>
+</div></code></pre>
 
 
 
