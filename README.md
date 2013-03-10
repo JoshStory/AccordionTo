@@ -2,9 +2,9 @@
 AccordionTo
 =============================
 
-A responsive accordtion to tabs jQuery plugin. Uses a separate list to control the tab functionality, giving more options for layout.
+A responsive accordtion to tabs jQuery plugin. Uses a separate list to control the tabs, giving more options for layout.
 
-Second list also works as anchor fallback navigation when no js is available.
+Second list also works as anchor navigation fallback when no js is available.
 
 You can link to specific tabs in the URL by using the same conventions as jQuery UI tabs.
 
@@ -14,7 +14,7 @@ Example Usage:
 
 	<script src="/latest/version/of/jQuery.js"></script>
 	  
-	<script src="accordionTo.js"></script></code>
+	<script src="accordionTo.js"></script>
 
 	<script>
 	
