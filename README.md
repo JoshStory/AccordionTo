@@ -36,12 +36,12 @@ Options (showing defaults):
 			
 	  $('.tabContainer').accordionTo({
 
-          controls : 'tabsNav', //class for separate list controls
-  	      accordion : 'accordionNav', //class for main accordion list
-		      breakpoint : 480, //breakpoint for transitions and resize check
-		      accordionTrans : 'slide', //effect for accordion
-		      tabTrans : 'none', //effect for tabs
-		      resizeCheck : true //when window resizes to tabs, check if there are no active tabs and set the first one
+         	controls : 'tabsNav', //class for separate list controls
+  	 	accordion : 'accordionNav', //class for main accordion list
+		breakpoint : 480, //breakpoint in pixels for transitions and resize check
+		accordionTrans : 'slide', //effect for accordion. also uses 'fade' and 'none'
+		tabTrans : 'none', //effect for tabs. lso uses 'fade' and 'slide'
+		resizeCheck : true //when window resizes above the breakpoint, check if there are no active tabs. if there aren't any, set the first tab active
 
     });
 			
