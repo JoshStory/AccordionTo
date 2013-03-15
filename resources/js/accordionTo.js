@@ -80,7 +80,7 @@
 							$(allContainers).removeClass('open').slideUp(acc.settings.accSpeed);
 							$(activeContainer).addClass('open').slideDown(acc.settings.accSpeed);
 						} else if (acc.settings.accTrans === 'fade') {
-							$(allContainers).removeClass('open').fadeOut(acc.settings.accSpeed);
+							$(allContainers).removeClass('open').hide();
 							$(activeContainer).addClass('open').fadeIn(acc.settings.accSpeed);
 						} else {
 							$(allContainers).removeClass('open').hide();
