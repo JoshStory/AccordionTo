@@ -6,13 +6,25 @@
 	
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	
-	<script src="/resources/js/accordionTo.js"></script>
+	<script src="resources/js/accordionTo.js"></script>
 
 	<script>
 	
 		$(document).ready(function(){
 			
-			$('.tabContainer').accordionTo();
+			$('.tabContainer').accordionTo({
+
+			            activeOnLoad : true,
+						controls : 'tabsNav',
+						accordion : 'accordionNav',
+						breakpoint : 480,
+						accTrans : 'slide',
+						accSpeed : 300,
+						tabTrans : 'none',
+						tabSpeed : 300,
+						resizeCheck : true
+
+			        });
 			
 		});
 	

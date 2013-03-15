@@ -1,25 +1,29 @@
 (function( $ ) {
 	
-	var defaults = {
-		'controls' : 'tabsNav',
-		'accordion' : 'accordionNav',
-		'breakpoint' : 480,
-		'accordionTrans' : 'slide',
-		'tabTrans' : 'none',
-		'resizeCheck' : true
-	};
-	
 	$.fn.accordionTo = function(options) {
-		
+
+		//default plugin settings
+		var defaults = {
+			'activeOnLoad' : true,
+			'controls' : 'tabsNav',
+			'accordion' : 'accordionNav',
+			'breakpoint' : 480,
+			'accTrans' : 'slide',
+			'accSpeed' : 300,
+			'tabTrans' : 'none',
+			'tabSpeed' : null,
+			'resizeCheck' : true
+		};
+	
 		// create a namespace to be used throughout the plugin
-		var accordion = {};
+		var acc = {};
 		
 		var el = this;
 		
 		// initialize namespace
 		var init = function() {
 			
-			accordion.settings = $.extend({}, defaults, options);
+			acc.settings = $.extend({}, defaults, options);
 			
 			/* Init and Main Nav */
 		    var body = $('body');
@@ -30,7 +34,7 @@
 		    /* Accordion to Tabs */
 			//var triggers = ;
 			
-			$('.' + accordion.settings.accordion + ' .section').hide();
+			$('.' + acc.settings.accordion + ' .section').hide();
 
 			if(document.location.hash != '' && document.location.hash != '#top') {
 			    //get the index from URL hash
@@ -39,30 +43,30 @@
 				$('a[href^="' + hash + '"]').addClass('active');
 				$(hash).addClass('open').show();
 
-			} else {
+			} else if (acc.settings.activeOnLoad) {
 				//set the first group active
 				firstSetActive();
 
 			}
 			
-			var triggers = $('.' + accordion.settings.controls + ' li a, .' + accordion.settings.accordion + ' li > a');
+			var triggers = $('.' + acc.settings.controls + ' li a, .' + acc.settings.accordion + ' li > a');
 			
 			$(triggers).on('click', function(){
 				
 				var activeContainer = $(this).attr('href'),
-					allContainers = $('.' + accordion.settings.accordion + ' li .section');
+					allContainers = $('.' + acc.settings.accordion + ' li .section');
 					bothURLs = $('a[href^="' + activeContainer + '"]'),
 					windowWidth = $(window).width();
 
-				if (windowWidth < accordion.settings.breakpoint) {
+				if (windowWidth < acc.settings.breakpoint) {
 					//for  accordion transitions
 					if ($(bothURLs).hasClass('active')) {
 						//if the selected trigger is already active
 						$(bothURLs).removeClass('active');
-						if (accordion.settings.accordionTrans === 'slide') {
-							$(activeContainer).removeClass('open').slideUp(300);
-						} else if (accordion.settings.accordionTrans === 'fade') {
-							$(activeContainer).removeClass('open').fadeOut(300);
+						if (acc.settings.accTrans === 'slide') {
+							$(activeContainer).removeClass('open').slideUp(acc.settings.accSpeed);
+						} else if (acc.settings.accTrans === 'fade') {
+							$(activeContainer).removeClass('open').fadeOut(acc.settings.accSpeed);
 						} else {
 							$(activeContainer).removeClass('open').hide();
 						}
@@ -72,12 +76,12 @@
 						//if the selected trigger is not active
 						$(triggers).removeClass('active');
 						$(bothURLs).addClass('active');
-						if (accordion.settings.accordionTrans === 'slide') {
-							$(allContainers).removeClass('open').slideUp(300);
-							$(activeContainer).addClass('open').slideDown(300);
-						} else if (accordion.settings.accordionTrans === 'fade') {
-							$(allContainers).removeClass('open').fadeOut(300);
-							$(activeContainer).addClass('open').fadeIn(300);
+						if (acc.settings.accTrans === 'slide') {
+							$(allContainers).removeClass('open').slideUp(acc.settings.accSpeed);
+							$(activeContainer).addClass('open').slideDown(acc.settings.accSpeed);
+						} else if (acc.settings.accTrans === 'fade') {
+							$(allContainers).removeClass('open').fadeOut(acc.settings.accSpeed);
+							$(activeContainer).addClass('open').fadeIn(acc.settings.accSpeed);
 						} else {
 							$(allContainers).removeClass('open').hide();
 							$(activeContainer).addClass('open').show();
@@ -89,25 +93,39 @@
 
 				} else {
 					//for tab transitions
-					$(triggers).removeClass('active');
-					$(bothURLs).addClass('active');
-					if (accordion.settings.tabTrans === 'slide') {
-						$(allContainers).removeClass('open').slideUp();
-						$(activeContainer).addClass('open').slideDown();
-					} else if (accordion.settings.tabTrans === 'fade') {
-						$(allContainers).removeClass('open').fadeOut();
-						$(activeContainer).addClass('open').fadeIn();
+					if ($(bothURLs).hasClass('active') && acc.settings.activeOnLoad) {
+						return false;
+					} else if ($(bothURLs).hasClass('active') && !acc.settings.activeOnLoad) {
+						$(triggers).removeClass('active');
+						if (acc.settings.tabTrans === 'slide') {
+							$(allContainers).removeClass('open').slideUp(acc.settings.tabSpeed);
+						} else if (acc.settings.tabTrans === 'fade') {
+							$(allContainers).removeClass('open').fadeOut(acc.settings.tabSpeed);
+						} else {
+							$(allContainers).removeClass('open').hide();
+						}
+						return false;
 					} else {
-						$(allContainers).removeClass('open').hide();
-						$(activeContainer).addClass('open').show();
+						$(triggers).removeClass('active');
+						$(bothURLs).addClass('active');
+						if (acc.settings.tabTrans === 'slide') {
+							$(allContainers).removeClass('open').slideUp(acc.settings.tabSpeed);
+							$(activeContainer).addClass('open').slideDown(acc.settings.tabSpeed);
+						} else if (acc.settings.tabTrans === 'fade') {
+							$(allContainers).removeClass('open').hide();
+							$(activeContainer).addClass('open').fadeIn(acc.settings.tabSpeed);
+						} else {
+							$(allContainers).removeClass('open').hide();
+							$(activeContainer).addClass('open').show();
+						}
+						return false;
 					}
-					return false;
 
 				}
 				
 			})
 			
-			if (accordion.settings.resizeCheck) {
+			if (acc.settings.resizeCheck) {
 				$(window).resize(resize);
 			}
 			
@@ -115,17 +133,17 @@
 		
 		var firstSetActive = function() {
 
-			$('.' + accordion.settings.controls + ' li:first a, .' + accordion.settings.accordion + ' li:first > a').addClass('active');
-			$('.' + accordion.settings.accordion + ' li:first > a').next('.section').addClass('open').show();
-
+			$('.' + acc.settings.controls + ' li:first a, .' + acc.settings.accordion + ' li:first > a').addClass('active');
+			$('.' + acc.settings.accordion + ' li:first > a').next('.section').addClass('open').show();
+			
 		}
 		
 		var resize = function( ) {
 		
-			var hasActiveTab = $('.' + accordion.settings.accordion + ' .section').hasClass('open'),
+			var hasActiveTab = $('.' + acc.settings.accordion + ' .section').hasClass('open'),
 				windowWidth = $(window).width();
 			
-			if (hasActiveTab === false && windowWidth > 480) {
+			if (hasActiveTab === false && windowWidth > acc.settings.breakpoint && acc.settings.activeOnLoad) {
 				
 				firstSetActive();
 			
