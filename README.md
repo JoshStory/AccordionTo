@@ -1,4 +1,3 @@
-=============================
 AccordionTo
 =============================
 
@@ -10,7 +9,6 @@ You can link to specific tabs in the URL by using the same conventions as jQuery
 
 Use CSS + media queries to toggle visibility for the tabs and anchor links.
 
-=============================
 Example Usage:
 =============================
 
@@ -28,7 +26,6 @@ Example Usage:
 	
 	</script>
 
-=============================
 Options (showing defaults):
 =============================
 
@@ -54,44 +51,33 @@ Options (showing defaults):
 	
 	</script>
 
-<code>activeOnLoad</code> - (default: true)
-----------------------------------------------------------
-Load first content block on page load.
+<pre><code>activeOnLoad</code> - (default: true)
+Show first content block on page load.</pre>
 
-<code>controls</code> - (default: 'tabsNav')
-----------------------------------------------------------
-CSS class name for the separate unordered list that will control your tabs.
+<pre><code>controls</code> - (default: 'tabsNav')
+CSS class name for the separate unordered list that will control your tabs.</pre>
 
-<code>accordion</code> - (default: 'accordionNav')
-----------------------------------------------------------
-CSS class name for the unordered list that contains the content blocks.
+<pre><code>accordion</code> - (default: 'accordionNav')
+CSS class name for the unordered list that contains the content blocks.</pre>
 
-<code>breakpoint</code> - (default: 480)
-----------------------------------------------------------
-Breakpoint used to detect which transition to use and used for resize check.
+<pre><code>breakpoint</code> - (default: 480)
+Breakpoint used to detect which transition to use and used for resize check.</pre>
 
-<code>accTrans</code> - (default: 'slide')
-----------------------------------------------------------
-Transition effect for the accordion. Accepts 'slide', 'fade' and 'none'.
+<pre><code>accTrans</code> - (default: 'slide')
+Transition effect for the accordion. Accepts 'slide', 'fade' and 'none'.</pre>
 
-<code>accSpeed</code> - (default: 300)
-----------------------------------------------------------
-Transition speed for accordion.
+<pre><code>accSpeed</code> - (default: 300)
+Transition speed for accordion.</pre>
 
-<code>tabTrans</code> - (default: 'none')
-----------------------------------------------------------
-Transition effect for the tabs. Accepts 'slide', 'fade' and 'none'.
+<pre><code>tabTrans</code> - (default: 'none')
+Transition effect for the tabs. Accepts 'slide', 'fade' and 'none'.</pre>
 
-<code>tabSpeed</code> - (default: 300)
-----------------------------------------------------------
-Transition speed for tabs.
+<pre><code>tabSpeed</code> - (default: 300)
+Transition speed for tabs.</pre>
 
-<code>resizeCheck</code> - (default: true)
-----------------------------------------------------------
-When all accordions are collapsed and resizing a browser window above the breakpoint, should the accordionTo automatically active the first tab?
+<pre><code>resizeCheck</code> - (default: true)
+When all accordions are collapsed and resizing a browser window above the breakpoint, should the accordionTo automatically active the first tab?</pre>
 
-
-=============================
 Markup:
 =============================
 
