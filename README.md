@@ -76,7 +76,7 @@ Transition effect for the tabs. Accepts 'slide', 'fade' and 'none'.</pre>
 Transition speed for tabs.</pre>
 
 <pre><code>resizeCheck</code> - (default: true)
-When all accordions are collapsed and resizing a browser window above the breakpoint, should the accordionTo automatically active the first tab?</pre>
+When all accordions are collapsed and resizing a browser window above the breakpoint, should accordionTo automatically activate the first tab?</pre>
 
 Markup:
 =============================
