@@ -2,11 +2,11 @@
 AccordionTo
 =============================
 
-A responsive accordtion to tabs jQuery plugin. Uses a separate list to control the tabs, giving more options for layout.
+A responsive accordion to tabs jQuery plugin.
 
-The tabs list also doubles as anchor navigation fallback when no js is available.
+Uses a separate list to control the tabs, giving more options for layout and doubles as an anchor navigation fallback when no js is available.
 
-You can link to specific tabs in the URL by using the same conventions as jQuery UI tabs.
+You can link to specific tabs in the URL by using the same conventions as jQuery UI tabs. (http://example.com/tabs-page#tabId)
 
 Use CSS + media queries to toggle visibility for the tabs and anchor links.
 
@@ -38,18 +38,58 @@ Options (showing defaults):
 			
 			$('.tabContainer').accordionTo({
 
-				controls : 'tabsNav', //class for separate list controls
-				accordion : 'accordionNav', //class for main accordion list
-				breakpoint : 480, //breakpoint in pixels for transitions and resize check
-				accordionTrans : 'slide', //effect for accordion. also uses 'fade' and 'none'
-				tabTrans : 'none', //effect for tabs. lso uses 'fade' and 'slide'
-				resizeCheck : true //when window resizes above the breakpoint, check if there are no active tabs. if there aren't any, set the first tab active
+				activeOnLoad : true,
+				controls : 'tabsNav',
+				accordion : 'accordionNav',
+				breakpoint : 480,
+				accTrans : 'slide',
+				accSpeed : 300,
+				tabTrans : 'none',
+				tabSpeed : 300,
+				resizeCheck : true
 
 			});
 			
 		});
 	
 	</script>
+
+	<code>activeOnLoad</code> - (default: true)
+	----------------------------------------------------------
+	Load first content block on page load.
+
+	<code>controls</code> - (default: 'tabsNav')
+	----------------------------------------------------------
+	CSS class name for the separate unordered list that will control your tabs.
+
+	<code>accordion</code> - (default: 'accordionNav')
+	----------------------------------------------------------
+	CSS class name for the unordered list that contains the content blocks.
+
+	<code>breakpoint</code> - (default: 480)
+	----------------------------------------------------------
+	Breakpoint used to detect which transition to use and used for resize check.
+
+	<code>accTrans</code> - (default: 'slide')
+	----------------------------------------------------------
+	Transition effect for the accordion. Accepts 'slide', 'fade' and 'none'.
+
+	<code>accSpeed</code> - (default: 300)
+	----------------------------------------------------------
+	Transition speed for accordion.
+
+	<code>tabTrans</code> - (default: 'none')
+	----------------------------------------------------------
+	Transition effect for the tabs. Accepts 'slide', 'fade' and 'none'.
+
+	<code>tabSpeed</code> - (default: 300)
+	----------------------------------------------------------
+	Transition speed for tabs.
+
+	<code>resizeCheck</code> - (default: true)
+	----------------------------------------------------------
+	When all accordions are collapsed and resizing a browser window above the breakpoint, should the accordionTo automatically active the first tab?
+
 
 =============================
 Markup:

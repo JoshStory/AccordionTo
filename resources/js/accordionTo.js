@@ -11,7 +11,7 @@
 			'accTrans' : 'slide',
 			'accSpeed' : 300,
 			'tabTrans' : 'none',
-			'tabSpeed' : null,
+			'tabSpeed' : 300,
 			'resizeCheck' : true
 		};
 	
