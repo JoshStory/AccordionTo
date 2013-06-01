@@ -26,10 +26,11 @@
 			acc.settings = $.extend({}, defaults, options);
 			
 			/* Init and Main Nav */
-		    var body = $('body');
+		    var body = $('body'),
+				triggers = $('.' + acc.settings.controls + ' li a, .' + acc.settings.accordion + ' li > a');
 
-		    $(body).removeClass('no-js');
-		    $(body).addClass('js');
+		    body.removeClass('no-js');
+		    body.addClass('js');
 
 		    /* Accordion to Tabs */
 			//var triggers = ;
@@ -48,8 +49,6 @@
 				firstSetActive();
 
 			}
-			
-			var triggers = $('.' + acc.settings.controls + ' li a, .' + acc.settings.accordion + ' li > a');
 			
 			$(triggers).on('click', function(){
 				
