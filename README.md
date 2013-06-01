@@ -14,7 +14,7 @@ Example Usage:
 
 	<script src="/latest/version/of/jQuery.js"></script>
 	  
-	<script src="accordionTo.js"></script>
+	<script src="resources/js/accordionTo.min.js"></script>
 
 	<script>
 	
